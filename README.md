@@ -55,13 +55,6 @@ O objetivo é praticar conceitos de desenvolvimento web criando uma plataforma c
 - [ ] Adicionar sistema de **busca de produtos**  
 - [ ] Implementar **filtros e categorias** na listagem de produtos  
 - [ ] Criar a área de **perfil do usuário** (dados pessoais e preferências)  
-- [ ] Integrar com um **banco de dados** (usuários, produtos e pedidos)  
-- [ ] Implementar **API de pagamentos** (ex: cartão de crédito, Pix, boleto)  
-- [ ] Adicionar **autenticação de usuário** (login persistente e logout)  
-- [ ] Melhorar a **responsividade e acessibilidade** do site  
-- [ ] Criar uma seção de **administração** (gerenciamento de produtos e pedidos)  
-- [ ] Adicionar **testes automatizados** para funcionalidades principais  
-- [ ] Implantar o projeto em um **servidor online** (ex: Vercel, Netlify, GitHub Pages, etc.)  
 
 ---
 
