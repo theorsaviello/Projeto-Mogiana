@@ -47,8 +47,6 @@ O objetivo é praticar conceitos de desenvolvimento web criando uma plataforma c
 
 ## 📌 Próximos Passos
 
-## 📌 Próximos Passos
-
 - [ ] Finalizar a **página inicial** (layout responsivo, banners e destaques de produtos)  
 - [ ] Criar a **página de login e cadastro** com validação de formulários  
 - [ ] Implementar a **página do carrinho de compras**  
