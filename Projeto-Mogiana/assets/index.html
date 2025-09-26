@@ -4,19 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja Clube Atlético Mogiana</title>
-
   <link rel="stylesheet" href="css/pages/index/index.css">
 </head>
 <body>
 
   <header>
-    <div class="search-box">
-      <input type="text" placeholder="Buscar">
-      🔍
-    </div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Steam_locomotive_icon.png" alt="Logo">
-    <div class="menu">
-      CADASTRE-SE | INICIAR SESSÃO 🛒
+    <img src="images/global/logo clube.png" alt="Logo da Loja" class="logo">
+    <div class="faixa"></div>
+
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Pesquisar produto..." />
+      <ul id="suggestions"></ul>
     </div>
   </header>
 
@@ -28,31 +26,31 @@
   </nav>
 
   <section class="produtos">
-    <div class="produto">
-      <img src="https://i.ibb.co/V3d4vnM/camisa.png" alt="Camisa Oficial">
+    <div class="produto" onclick="window.location.href='camisaoficial.html'">
+      <img src="images/global/Camisa Oficial 1.png" alt="Camisa Oficial">
       <h3>Camisa Oficial 1</h3>
       <p class="preco">R$ 349,99</p>
       <p class="parcelamento">5x de R$69,99 sem juros</p>
       <button class="botao">Comprar</button>
     </div>
 
-    <div class="produto">
-      <img src="https://i.ibb.co/47VSVTq/jaqueta.png" alt="Jaqueta Oficial">
+    <div class="produto" onclick="window.location.href='JaquetaOficial.html'">
+      <img src="images/global/Jaqueta Oficial.png" alt="Jaqueta Oficial">
       <h3>Jaqueta Oficial</h3>
       <p class="preco">R$ 429,99</p>
       <p class="parcelamento">9x de R$47,78 sem juros</p>
       <button class="botao">Comprar</button>
     </div>
 
-    <div class="produto">
-      <img src="https://i.ibb.co/ZKnyX8g/garrafa.png" alt="Garrafinha">
+    <div class="produto" onclick="window.location.href='GarrafinhaTérmicaOficial.html'">
+      <img src="images/global/Garrafinha Térmica Oficial.png" alt="Garrafinha">
       <h3>Garrafinha Térmica Oficial</h3>
       <p><span class="preco-antigo">R$ 99,99</span> <span class="preco">R$ 79,99</span></p>
       <button class="botao">Comprar</button>
     </div>
 
-    <div class="produto">
-      <img src="https://i.ibb.co/dBLT8v1/bone.png" alt="Boné Oficial">
+    <div class="produto" onclick="window.location.href='BonéOficial.html'">
+      <img src="images/global/Boné Oficial.png" alt="Boné Oficial">
       <h3>Boné Oficial</h3>
       <p class="preco">R$ 139,90</p>
       <p class="parcelamento">7x de R$19,99 sem juros</p>
