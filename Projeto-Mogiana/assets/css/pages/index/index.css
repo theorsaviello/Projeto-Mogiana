@@ -27,7 +27,7 @@ header img {
 
 /* Faixa vermelha */
 .faixa {
-  width: 112%;
+  width: 105%;
   height: 20px;
   background-color: #800000;
 }
@@ -156,4 +156,33 @@ ul#suggestions li:hover {
   text-decoration: line-through;
   color: #777;
   margin-right: 8px;
+}
+.auth-links {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.auth-links a {
+  text-decoration: none;
+  color: #aaa; /* cinza como na imagem */
+  margin: 0 5px;
+  transition: color 0.2s;
+}
+
+.auth-links a:hover {
+  color: #800000; /* muda para vermelho no hover */
+}
+.auth-links .carrinho {
+  font-size: 18px;   /* aumenta o tamanho do ícone */
+  margin-left: 8px;
+  text-decoration: none;
+  color: #aaa;
+  transition: color 0.2s;
+}
+
+.auth-links .carrinho:hover {
+  color: #800000;
 }
