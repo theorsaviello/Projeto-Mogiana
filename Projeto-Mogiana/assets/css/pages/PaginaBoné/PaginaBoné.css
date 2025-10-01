@@ -26,7 +26,7 @@ body {
 .imagem-produto img {
     max-width: 70%;
     height: auto;
-    border: 1px solid #c10000;
+    border: 1px solid #1C3357;
     padding: 10px;
 }
 
@@ -37,12 +37,12 @@ body {
 
 .preco {
     font-size: 24px;
-    color: #c10000;
+    color: #1C3357;
     margin: 10px 0;
 }
 
 .botao-comprar {
-    background-color: #c10000;
+    background-color: #1C3357;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -56,7 +56,7 @@ body {
 }
 
 header {
-    background-color: #c10000; /* fundo vermelho */
+    background-color: #1C3357; /* fundo vermelho */
     color: white; /* texto branco */
     padding: 20px;
     text-align: left;
@@ -88,5 +88,5 @@ nav a:hover {
 h1 {
     text-align: left;
     margin-bottom: 20px;
-    color: #c10000;
+    color: #1C3357;
 }

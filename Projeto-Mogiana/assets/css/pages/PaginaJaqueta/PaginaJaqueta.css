@@ -6,7 +6,7 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #c10000;
+    background-color: #1C3357;
     color: white;
     padding: 20px;
     text-align: left;
@@ -22,7 +22,7 @@ header {
 h1 {
     text-align: left;
     margin-bottom: 20px;
-    color: #c10000;
+    color: #1C3357;
 }
 
 /* Container do produto */
@@ -48,7 +48,7 @@ h1 {
 .imagem-produto img {
     max-width: 70%;
     height: auto;
-    border: 1px solid #c10000;
+    border: 1px solid #1C3357;
     padding: 10px;
 }
 
@@ -60,13 +60,13 @@ h1 {
 /* Preço */
 .preco {
     font-size: 24px;
-    color: #c10000;
+    color: #1C3357;
     margin: 10px 0;
 }
 
 /* Botão */
 .botao-comprar {
-    background-color: #c10000;
+    background-color: #1C3357;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -76,5 +76,5 @@ h1 {
 }
 
 .botao-comprar:hover {
-    background-color: #a00000;
+    background-color: #1C3357;
 }
