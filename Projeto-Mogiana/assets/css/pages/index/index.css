@@ -1,4 +1,5 @@
 @import '../../global/global.css';
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -25,7 +26,7 @@ header img {
   margin-bottom: 10px;
 }
 
-/* Faixa vermelha */
+/* Faixa azul */
 .faixa {
   width: 106%;
   height: 20px;
@@ -106,9 +107,13 @@ ul#suggestions li:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+/* Padronização das imagens dos produtos */
 .produto img {
   width: 100%;
-  max-width: 300px;
+  max-width: 250px;   /* largura máxima */
+  height: 250px;      /* altura fixa */
+  object-fit: cover;  /* corta o excesso mantendo proporção */
+  border-radius: 8px; /* bordas arredondadas */
   margin-bottom: 15px;
 }
 
@@ -158,6 +163,8 @@ ul#suggestions li:hover {
   color: #777;
   margin-right: 8px;
 }
+
+/* Links de login, cadastro e carrinho */
 .auth-links {
   position: absolute;
   top: 15px;
@@ -168,16 +175,17 @@ ul#suggestions li:hover {
 
 .auth-links a {
   text-decoration: none;
-  color: #aaa; /* cinza como na imagem */
+  color: #aaa;
   margin: 0 5px;
   transition: color 0.2s;
 }
 
 .auth-links a:hover {
-  color: #1C3357; /* muda para vermelho no hover */
+  color: #1C3357;
 }
+
 .auth-links .carrinho {
-  font-size: 18px;   /* aumenta o tamanho do ícone */
+  font-size: 18px;
   margin-left: 8px;
   text-decoration: none;
   color: #aaa;
