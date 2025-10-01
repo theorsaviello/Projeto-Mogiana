@@ -1,9 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Projeto Mogiana</title>
-    <link rel="stylesheet" href="css/pages/login/login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Loja Clube Atlético Mogiana</title>
+  <link rel="stylesheet" href="css/pages/login/login.css">
 </head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Loja <span>Clube Atlético Mogiana</span></h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Login</h2>
+    <form id="formLogin">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" required>
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" required>
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <div id="mensagem"></div>
+  </main>
+
+  <script src="js/pages/login/login.js"></script>
+</body>
 </html>
