@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -9,29 +9,37 @@
 <body>
 
   <header>
-    <img src="images/LogoLoja.png" alt="Logo da Loja" class="logo">
+    <div class="topo">
+      <!-- Barra de pesquisa -->
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Pesquisar produto..." autocomplete="off"/>
+        <ul id="suggestions"></ul>
+      </div>
+
+      <!-- Logo -->
+      <img src="images/LogoLoja.png" alt="Logo da Loja" class="logo">
+
+      <!-- Links de login/cadastro/carrinho -->
+      <div class="auth-links">
+        <a href="cadastro.html">CADASTRE-SE</a> | 
+        <a href="login.html">INICIAR SESSÃO</a>
+        <a href="carrinho.html" class="carrinho">🛒</a>
+      </div>
+    </div>
+
+    <!-- Faixa azul -->
     <div class="faixa"></div>
 
-    <div class="search-container">
-      <input type="text" id="search" placeholder="Pesquisar produto..." />
-      <ul id="suggestions"></ul>
-    </div>
-    
-    <div class="auth-links">
-      <a href="cadastro.html">CADASTRE-SE</a> | 
-      <a href="login.html">INICIAR SESSÃO</a>
-      <a href="carrinho.html" class="carrinho">🛒 </a>
-    </div>
-
+    <!-- Categorias -->
+    <nav class="categorias">
+      <span>Camisas</span>
+      <span>Casacos</span>
+      <span>Garrafas</span>
+      <span>Bonés</span>
+    </nav>
   </header>
 
-  <nav class="categorias">
-    <span>Camisas</span>
-    <span>Casacos</span>
-    <span>Garrafas</span>
-    <span>Bonés</span>
-  </nav>
-
+  <!-- Produtos -->
   <section class="produtos">
     <div class="produto" onclick="window.location.href='PaginaCamisa1.html'">
       <img src="images/Camisa Oficial 1.png" alt="Camisa Oficial">
@@ -63,14 +71,25 @@
       <p class="parcelamento">7x de R$19,99 sem juros</p>
       <button class="botao">Comprar</button>
     </div>
+
     <div class="produto" onclick="window.location.href='PaginaCamisa2.html'">
       <img src="images/Camisa Oficial 2.png" alt="Camisa Oficial 2">
       <h3>Camisa Oficial 2</h3>
       <p class="preco">R$ 349,99</p>
       <p class="parcelamento">5x de R$69,99 sem juros</p>
       <button class="botao">Comprar</button>
+    </div>
+
+    <div class="produto" onclick="window.location.href='PaginaCamisa3.html'">
+      <img src="images/Camisa Oficial 3.png" alt="Camisa Oficial 3">
+      <h3>Camisa Oficial 3</h3>
+      <p class="preco">R$ 349,99</p>
+      <p class="parcelamento">5x de R$69,99 sem juros</p>
+      <button class="botao">Comprar</button>
+    </div>
   </section>
 
   <script src="js/pages/index/index.js"></script>
+
 </body>
 </html>
