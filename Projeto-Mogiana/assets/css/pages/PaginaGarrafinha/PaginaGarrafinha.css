@@ -81,12 +81,7 @@
   margin-bottom: 25px;
 }
 
-.preco {
-  font-size: 32px;
-  font-weight: bold;
-  color: #1C3357;
-  display: block;
-}
+
 
 .parcelamento {
   font-size: 16px;
@@ -295,4 +290,31 @@
   .opcoes-tamanho {
     justify-content: center;
   }
+}
+
+.preco-original {
+  font-size: 20px;
+  color: #888;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.preco-promocional {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1C3357; 
+  display: block;
+  margin-top: 5px;
+}
+
+.preco-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-bottom: 25px;
+}
+
+.preco-container .parcelamento {
+  width: 100%; /* Garante que o parcelamento vá para a próxima linha */
+  margin-top: 5px;
 }
