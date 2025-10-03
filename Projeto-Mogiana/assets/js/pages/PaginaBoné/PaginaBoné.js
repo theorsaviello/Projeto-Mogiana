@@ -1,5 +1,3 @@
-
-let tamanhoSelecionado = '';
 let quantidadeAtual = 1;
 
 // Dados do produto
@@ -16,30 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function inicializarPagina() {
-  // Configurar seleção de tamanhos
-  const botoesTamanho = document.querySelectorAll('.tamanho');
-  const sizeWarning = document.getElementById('size-warning');
-  
-  botoesTamanho.forEach(botao => {
-    botao.addEventListener('click', function() {
-      // Remove seleção anterior
-      botoesTamanho.forEach(b => b.classList.remove('selected'));
-      // Adiciona seleção atual
-      this.classList.add('selected');
-      tamanhoSelecionado = this.dataset.tamanho;
-      
-      // Esconder aviso de tamanho
-      if (sizeWarning) {
-        sizeWarning.classList.remove('show');
-      }
-      
-      // Habilitar botões
-      habilitarBotoes();
-    });
-  });
-
-  // Desabilitar botões inicialmente
-  desabilitarBotoes();
+  // Habilitar botões por padrão (não há seleção de tamanho)
+  habilitarBotoes();
 
   // Animação de entrada dos elementos
   const elementos = document.querySelectorAll('.produto-container > *, .avaliacoes');
@@ -64,18 +40,6 @@ function habilitarBotoes() {
   }
   if (botaoCarrinho) {
     botaoCarrinho.disabled = false;
-  }
-}
-
-function desabilitarBotoes() {
-  const botaoComprar = document.querySelector('.botao-comprar');
-  const botaoCarrinho = document.querySelector('.botao-carrinho');
-  
-  if (botaoComprar) {
-    botaoComprar.disabled = true;
-  }
-  if (botaoCarrinho) {
-    botaoCarrinho.disabled = true;
   }
 }
 
@@ -106,14 +70,8 @@ function diminuirQuantidade() {
 }
 
 function adicionarAoCarrinho() {
-  if (!tamanhoSelecionado) {
-    mostrarAvisoTamanho();
-    return;
-  }
-
   const item = {
     ...produtoAtual,
-    size: tamanhoSelecionado,
     quantity: quantidadeAtual
   };
 
@@ -137,15 +95,9 @@ function adicionarAoCarrinho() {
 }
 
 function comprarProduto() {
-  if (!tamanhoSelecionado) {
-    mostrarAvisoTamanho();
-    return;
-  }
-
   // Adicionar ao carrinho primeiro
   const produto = {
     ...produtoAtual,
-    size: tamanhoSelecionado,
     quantity: quantidadeAtual
   };
   
@@ -155,16 +107,4 @@ function comprarProduto() {
   setTimeout(() => {
     window.location.href = 'carrinho.html';
   }, 1000);
-}
-
-function mostrarAvisoTamanho() {
-  const sizeWarning = document.getElementById('size-warning');
-  if (sizeWarning) {
-    sizeWarning.classList.add('show');
-    
-    // Esconder aviso após 3 segundos
-    setTimeout(() => {
-      sizeWarning.classList.remove('show');
-    }, 3000);
-  }
 }

@@ -1,4 +1,3 @@
-// JavaScript específico para página da Camisa 1
 
 let tamanhoSelecionado = '';
 let quantidadeAtual = 1;
