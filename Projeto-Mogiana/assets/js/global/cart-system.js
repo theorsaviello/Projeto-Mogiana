@@ -180,37 +180,43 @@ class CartSystem {
 
     // Operações do Carrinho
     addItem(item) {
-        const existingItem = this.cart.find(cartItem => cartItem.id === item.id);
+        // Criar ID único baseado no produto e tamanho (se houver)
+        const uniqueId = item.size ? `${item.id}_${item.size}` : item.id;
+        const existingItem = this.cart.find(cartItem => cartItem.uniqueId === uniqueId);
         
         if (existingItem) {
-            existingItem.quantity += 1;
+            existingItem.quantity += (item.quantity || 1);
         } else {
-            this.cart.push({ ...item, quantity: 1 });
+            this.cart.push({ 
+                ...item, 
+                uniqueId: uniqueId,
+                quantity: item.quantity || 1 
+            });
         }
         
         this.saveCart();
         this.updateCartDisplay();
-        this.showAddToCartNotification(item.name);
+        this.showAddToCartNotification(item.name, item.size);
         console.log('Item adicionado ao carrinho:', item, 'Carrinho atual:', this.cart);
     }
 
-    removeItem(itemId) {
-        this.cart = this.cart.filter(item => item.id !== itemId);
+    removeItem(uniqueId) {
+        this.cart = this.cart.filter(item => item.uniqueId !== uniqueId);
         this.saveCart();
         this.updateCartDisplay();
-        console.log('Item removido do carrinho:', itemId, 'Carrinho atual:', this.cart);
+        console.log('Item removido do carrinho:', uniqueId, 'Carrinho atual:', this.cart);
     }
 
-    updateItemQuantity(itemId, quantity) {
-        const item = this.cart.find(cartItem => cartItem.id === itemId);
+    updateItemQuantity(uniqueId, quantity) {
+        const item = this.cart.find(cartItem => cartItem.uniqueId === uniqueId);
         if (item) {
             if (quantity <= 0) {
-                this.removeItem(itemId);
+                this.removeItem(uniqueId);
             } else {
                 item.quantity = quantity;
                 this.saveCart();
                 this.updateCartDisplay();
-                console.log('Quantidade do item atualizada:', itemId, 'Nova quantidade:', quantity);
+                console.log('Quantidade do item atualizada:', uniqueId, 'Nova quantidade:', quantity);
             }
         }
     }
@@ -265,19 +271,21 @@ class CartSystem {
             this.cart.forEach(item => {
                 const cartItemElement = document.createElement('div');
                 cartItemElement.classList.add('cart-item');
+                const sizeDisplay = item.size ? `<p class="item-size">Tamanho: ${item.size}</p>` : '';
                 cartItemElement.innerHTML = `
                     <div class="item-info">
                         <img src="${item.image}" alt="${item.name}" class="item-image">
                         <div class="item-details">
                             <h4>${item.name}</h4>
+                            ${sizeDisplay}
                             <p>R$ ${item.price.toFixed(2)}</p>
                         </div>
                     </div>
                     <div class="item-controls">
-                        <button class="quantity-btn" onclick="cartSystem.updateItemQuantity('${item.id}', ${item.quantity - 1})">-</button>
+                        <button class="quantity-btn" onclick="cartSystem.updateItemQuantity('${item.uniqueId}', ${item.quantity - 1})">-</button>
                         <span class="quantity">${item.quantity}</span>
-                        <button class="quantity-btn" onclick="cartSystem.updateItemQuantity('${item.id}', ${item.quantity + 1})">+</button>
-                        <button class="remove-btn" onclick="cartSystem.removeItem('${item.id}')">Remover</button>
+                        <button class="quantity-btn" onclick="cartSystem.updateItemQuantity('${item.uniqueId}', ${item.quantity + 1})">+</button>
+                        <button class="remove-btn" onclick="cartSystem.removeItem('${item.uniqueId}')">Remover</button>
                     </div>
                     <div class="item-total">
                         R$ ${(item.price * item.quantity).toFixed(2)}
@@ -314,7 +322,7 @@ class CartSystem {
         this.updateCartIcon();
     }
 
-    showAddToCartNotification(itemName) {
+    showAddToCartNotification(itemName, size) {
         // Remover notificação existente se houver
         const existingNotification = document.querySelector('.cart-notification');
         if (existingNotification) {
@@ -324,7 +332,8 @@ class CartSystem {
         // Criar notificação temporária
         const notification = document.createElement('div');
         notification.className = 'cart-notification';
-        notification.innerHTML = `${itemName} adicionado ao carrinho!`;
+        const sizeText = size ? ` (Tamanho ${size})` : '';
+        notification.innerHTML = `${itemName}${sizeText} adicionado ao carrinho!`;
         
         document.body.appendChild(notification);
         

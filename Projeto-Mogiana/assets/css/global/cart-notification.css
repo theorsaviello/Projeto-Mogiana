@@ -1,0 +1,73 @@
+/* Estilos para notificação do carrinho */
+.cart-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Estilos para exibição de tamanho no carrinho */
+.item-size {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+/* Estilos para botões desabilitados */
+.botao-comprar:disabled,
+.botao-carrinho:disabled {
+  background: #ccc !important;
+  color: #666 !important;
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+.botao-comprar:disabled:hover,
+.botao-carrinho:disabled:hover {
+  background: #ccc !important;
+  transform: none !important;
+}
+
+/* Indicador visual para tamanho obrigatório */
+.tamanhos.required h3::after {
+  content: " *";
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.size-warning {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+  display: none;
+}
+
+.size-warning.show {
+  display: block;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

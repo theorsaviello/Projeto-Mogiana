@@ -1,47 +1,143 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Camisa Oficial 2</title>
-  <link rel="stylesheet" href="css/pages/PaginaCamisa2/PaginaCamisa2.css">
+  <title>Camisa Oficial 2 - Loja Clube Atlético Mogiana</title>
+  <link rel="stylesheet" href="css/global/header.css">
   <link rel="stylesheet" href="css/global/cart-system.css">
+  <link rel="stylesheet" href="css/global/cart-notification.css">
+  <link rel="stylesheet" href="css/pages/PaginaCamisa2/PaginaCamisa2.css">
 </head>
 <body>
+
   <header>
-    <img src="images/logobranca.png" alt="Logo da Loja" class="logo">
-    <div class="auth-links">
-      <a href="cadastro.html">CADASTRE-SE</a> | 
-      <a href="login.html">INICIAR SESSÃO</a>
-      <a href="carrinho.html" class="carrinho">🛒</a>
+    <div class="topo">
+      <!-- Barra de pesquisa -->
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Pesquisar produto..." autocomplete="off"/>
+        <ul id="suggestions"></ul>
+      </div>
+
+      <!-- Logo -->
+      <img src="images/LogoLoja.png" alt="Logo da Loja" class="logo">
+
+      <!-- Links de login/cadastro/carrinho -->
+      <div class="auth-links">
+        <a href="cadastro.html">CADASTRE-SE</a> | 
+        <a href="login.html">INICIAR SESSÃO</a>
+        <a href="carrinho.html" class="carrinho">🛒</a>
+      </div>
     </div>
+
+    <!-- Faixa azul -->
+    <div class="faixa"></div>
+
+    <!-- Categorias -->
+    <nav class="categorias">
+      <span>Camisas</span>
+      <span>Casacos</span>
+      <span>Garrafas</span>
+      <span>Bonés</span>
+    </nav>
   </header>
 
-  <h1>Camisa Oficial CAM II <br>25/26 Masculina <br>Azul / Preta / Dourada</h1>
-
-  <div class="produto-container">
-    <!-- Comentários à esquerda -->
-    <div class="comentarios">
-      <h2>Avaliações</h2>
-      <div class="comentario"><strong>João:</strong> Produto incrível!</div>
-      <div class="comentario"><strong>Maria:</strong> Chegou rápido e em perfeito estado.</div>
+  <!-- Conteúdo específico do produto -->
+  <main class="produto-page">
+    <div class="breadcrumb">
+      <a href="index.html">Início</a> > <span>Camisa Oficial 2</span>
     </div>
 
-    <!-- Imagem do produto no centro -->
-    <div class="imagem-produto">
-      <img src="images/Camisa Oficial 2.png" alt="camisa oficial">
+    <h1>Camisa Oficial CAM II<br>25/26 Masculina<br>Preta / Azul / Dourada</h1>
+
+    <div class="produto-container">
+      <!-- Imagem do produto -->
+      <div class="imagem-produto">
+        <img src="images/Camisa Oficial 2.png" alt="Camisa Oficial 2" id="produto-imagem">
+        <div class="miniaturas">
+          <img src="images/Camisa Oficial 2.png" alt="Frente" class="miniatura active" onclick="trocarImagem(this)">
+        </div>
+      </div>
+
+      <!-- Detalhes do produto -->
+      <div class="detalhes-produto">
+        <div class="preco-container">
+          <span class="preco">R$ 349,99</span>
+          <span class="parcelamento">ou 5x de R$ 69,99 sem juros</span>
+        </div>
+
+        <div class="tamanhos required">
+          <h3>Tamanho:</h3>
+          <div class="opcoes-tamanho">
+            <button class="tamanho" data-tamanho="P">P</button>
+            <button class="tamanho" data-tamanho="M">M</button>
+            <button class="tamanho" data-tamanho="G">G</button>
+            <button class="tamanho" data-tamanho="GG">GG</button>
+          </div>
+          <div class="size-warning" id="size-warning">
+            Por favor, selecione um tamanho antes de continuar.
+          </div>
+        </div>
+
+        <div class="quantidade">
+          <h3>Quantidade:</h3>
+          <div class="contador">
+            <button onclick="diminuirQuantidade()">-</button>
+            <span id="quantidade">1</span>
+            <button onclick="aumentarQuantidade()">+</button>
+          </div>
+        </div>
+
+        <div class="acoes">
+          <button class="botao-comprar" onclick="comprarProduto()">Comprar Agora</button>
+          <button class="botao-carrinho" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="descricao">
+          <h3>Descrição:</h3>
+          <p>Camisa oficial do Clube Atlético Mogiana, modelo II da temporada 25/26. Confeccionada com tecido de alta qualidade, oferece conforto e durabilidade. Design moderno nas cores preta, azul e dourada, representando a tradição e elegância do clube.</p>
+          
+          <h4>Características:</h4>
+          <ul>
+            <li>Tecido: 100% Poliéster</li>
+            <li>Tecnologia Dry-Fit</li>
+            <li>Gola careca</li>
+            <li>Escudo bordado</li>
+            <li>Corte atlético</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <!-- Detalhes à direita -->
-    <div class="detalhes">
-      <h2>Detalhes</h2>
-      <p>Camisa de alta qualidade, disponível em vários tamanhos.</p>
-      <p class="preco">R$ 349,99</p>
-      <button class="botao-comprar" onclick="comprarProduto()">Comprar Agora</button>
-    </div>
-  </div>
+    <!-- Seção de avaliações -->
+    <section class="avaliacoes">
+      <h2>Avaliações dos Clientes</h2>
+      <div class="avaliacoes-container">
+        <div class="avaliacao">
+          <div class="estrelas">★★★★★</div>
+          <p><strong>João Silva:</strong> Produto incrível! Qualidade excelente e chegou rapidinho.</p>
+          <span class="data">15/09/2024</span>
+        </div>
+        <div class="avaliacao">
+          <div class="estrelas">★★★★☆</div>
+          <p><strong>Maria Santos:</strong> Camisa muito bonita, tecido de boa qualidade. Recomendo!</p>
+          <span class="data">10/09/2024</span>
+        </div>
+        <div class="avaliacao">
+          <div class="estrelas">★★★★★</div>
+          <p><strong>Pedro Costa:</strong> Perfeita! Tamanho certinho e material excelente.</p>
+          <span class="data">05/09/2024</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botão voltar -->
+  <a href="index.html" class="voltar-home">← Voltar à Loja</a>
 
   <script src="js/global/cart-system.js"></script>
+  <script src="js/global/header.js"></script>
   <script src="js/pages/PaginaCamisa2/PaginaCamisa2.js"></script>
+
 </body>
 </html>
