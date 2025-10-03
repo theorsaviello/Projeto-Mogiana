@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camisa Oficial 1</title>
   <link rel="stylesheet" href="css/pages/PaginaCamisa1/PaginaCamisa1.css">
+  <link rel="stylesheet" href="css/global/cart-system.css">
 </head>
 <body>
   <header>
     <img src="images/logobranca.png" alt="Logo da Loja" class="logo">
+    <div class="auth-links">
+      <a href="cadastro.html">CADASTRE-SE</a> | 
+      <a href="login.html">INICIAR SESSÃO</a>
+      <a href="carrinho.html" class="carrinho">🛒</a>
+    </div>
   </header>
 
-  <h1>Camisa Oficial CAM I <br>25/26 Masculina <br>Off White/ Vermelha</h1>
+  <h1>Camisa Oficial CAM I <br>25/26 Masculina <br>Preta / Azul</h1>
 
   <div class="produto-container">
     <!-- Comentários à esquerda -->
@@ -29,12 +35,13 @@
     <!-- Detalhes à direita -->
     <div class="detalhes">
       <h2>Detalhes</h2>
-      <p>camisa de alta qualidade, disponível em vários tamanhos.</p>
+      <p>Camisa de alta qualidade, disponível em vários tamanhos.</p>
       <p class="preco">R$ 349,99</p>
       <button class="botao-comprar" onclick="comprarProduto()">Comprar Agora</button>
     </div>
   </div>
 
+  <script src="js/global/cart-system.js"></script>
   <script src="js/pages/PaginaCamisa1/PaginaCamisa1.js"></script>
 </body>
 </html>

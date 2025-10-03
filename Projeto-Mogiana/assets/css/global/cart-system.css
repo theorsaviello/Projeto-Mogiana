@@ -1,0 +1,109 @@
+/* Estilos do Sistema de Carrinho de Compras */
+
+/* Animação para notificações */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Notificação de item adicionado ao carrinho */
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Estilos para itens do carrinho */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.item-details h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.item-details p {
+    margin: 0;
+    color: #666;
+}
+
+/* Controles de quantidade e remoção */
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.quantity-btn:hover {
+    background: #0056b3;
+}
+
+.quantity {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+.remove-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background: #c82333;
+}
+
+/* Total do item */
+.item-total {
+    font-weight: bold;
+    font-size: 16px;
+    min-width: 80px;
+    text-align: right;
+}

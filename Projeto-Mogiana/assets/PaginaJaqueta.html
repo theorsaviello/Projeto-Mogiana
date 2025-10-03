@@ -5,36 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaqueta Oficial</title>
   <link rel="stylesheet" href="css/pages/PaginaJaqueta/PaginaJaqueta.css">
+  <link rel="stylesheet" href="css/global/cart-system.css">
 </head>
 <body>
   <header>
-      <img src="images/logobranca.png" alt="Logo da Loja" class="logo">
+    <img src="images/logobranca.png" alt="Logo da Loja" class="logo">
+    <div class="auth-links">
+      <a href="cadastro.html">CADASTRE-SE</a> | 
+      <a href="login.html">INICIAR SESSÃO</a>
+      <a href="carrinho.html" class="carrinho">🛒</a>
+    </div>
   </header>
 
-  <h1>Jaqueta Oficial</h1>
+  <h1>Jaqueta Oficial <br>25/26 Masculina <br>Azul / Preta / Dourada</h1>
 
   <div class="produto-container">
-      <!-- Comentários à esquerda -->
-      <div class="comentarios">
-          <h2>Avaliações</h2>
-          <div class="comentario"><strong>João:</strong> Produto incrível!</div>
-          <div class="comentario"><strong>Maria:</strong> Chegou rápido e perfeito.</div>
-      </div>
+    <!-- Comentários à esquerda -->
+    <div class="comentarios">
+      <h2>Avaliações</h2>
+      <div class="comentario"><strong>João:</strong> Produto incrível!</div>
+      <div class="comentario"><strong>Maria:</strong> Chegou rápido e em perfeito estado.</div>
+    </div>
 
-      <!-- Imagem do produto no centro -->
-      <div class="imagem-produto">
-          <img src="images/Jaqueta Oficial.png" alt="Jaqueta Oficial">
-      </div>
+    <!-- Imagem do produto no centro -->
+    <div class="imagem-produto">
+      <img src="images/Jaqueta Oficial.png" alt="jaqueta oficial">
+    </div>
 
-      <!-- Detalhes à direita com botão -->
-      <div class="detalhes">
-          <h2>Detalhes</h2>
-          <p>Jaqueta de alta qualidade, disponível em várias cores.</p>
-          <p class="preco">R$ 429,99</p>
-          <button class="botao-comprar" onclick="comprar()">Comprar Agora</button>
-      </div>
+    <!-- Detalhes à direita -->
+    <div class="detalhes">
+      <h2>Detalhes</h2>
+      <p>Jaqueta de alta qualidade, disponível em vários tamanhos.</p>
+      <p class="preco">R$ 429,99</p>
+      <button class="botao-comprar" onclick="comprarProduto()">Comprar Agora</button>
+    </div>
   </div>
 
+  <script src="js/global/cart-system.js"></script>
   <script src="js/pages/PaginaJaqueta/PaginaJaqueta.js"></script>
 </body>
 </html>

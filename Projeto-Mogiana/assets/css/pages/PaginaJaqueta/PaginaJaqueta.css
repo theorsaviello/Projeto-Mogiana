@@ -1,80 +1,82 @@
+/* Reset básico */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-/* Cabeçalho */
+/* Header */
 header {
-    background-color: #1C3357;
-    color: white;
-    padding: 20px;
-    text-align: left;
-    margin-bottom: 20px;
+  background-color: #1C3357;
+  color: white;
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .logo {
-    width: 100px;
-    height: auto;
+  width: 100px;
+  height: auto;
 }
 
 /* Título */
 h1 {
-    text-align: left;
-    margin-bottom: 20px;
-    color: #1C3357;
+  text-align: left;
+  margin: 20px;
+  color: #1C3357;
 }
 
-/* Container do produto */
+/* Layout do produto */
 .produto-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    margin: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 20px;
 }
 
-.comentarios, .detalhes {
-    flex: 1;
-    min-width: 200px;
+.comentarios,
+.detalhes {
+  flex: 1;
+  min-width: 200px;
 }
 
 .imagem-produto {
-    flex: 1;
-    text-align: center;
-    min-width: 200px;
+  flex: 1;
+  text-align: center;
+  min-width: 200px;
 }
 
 .imagem-produto img {
-    max-width: 70%;
-    height: auto;
-    border: 1px solid #1C3357;
-    padding: 10px;
+  max-width: 70%;
+  height: auto;
+  border: 1px solid #1C3357;
+  padding: 10px;
 }
 
+/* Comentários */
 .comentario {
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
 }
 
-/* Preço */
+/* Detalhes */
 .preco {
-    font-size: 24px;
-    color: #1C3357;
-    margin: 10px 0;
+  font-size: 24px;
+  color: #1C3357;
+  margin: 10px 0;
 }
 
-/* Botão */
 .botao-comprar {
-    background-color: #1C3357;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
+  background-color: #1C3357;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 .botao-comprar:hover {
-    background-color: #1C3357;
+  background-color: #1C3357;
 }
