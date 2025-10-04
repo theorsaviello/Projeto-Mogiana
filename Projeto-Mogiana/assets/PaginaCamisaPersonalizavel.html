@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camisa Personalizável - Loja Clube Atlético Mogiana</title>
+  <link rel="stylesheet" href="css/global/header.css">
+  <link rel="stylesheet" href="css/global/cart-system.css">
+  <link rel="stylesheet" href="css/global/cart-notification.css">
+  <link rel="stylesheet" href="css/pages/PaginaCamisaPersonalizavel/PaginaCamisaPersonalizavel.css">
+</head>
+<body>
+
+  <header>
+    <div class="topo">
+      <!-- Barra de pesquisa -->
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Pesquisar produto..." autocomplete="off"/>
+        <ul id="suggestions"></ul>
+      </div>
+
+      <!-- Logo -->
+      <a href="index.html"><img src="images/LogoLoja.png" alt="Logo da Loja" class="logo"></a>
+
+      <!-- Links de login/cadastro/carrinho -->
+      <div class="auth-links">
+        <a href="cadastro.html">CADASTRE-SE</a> | 
+        <a href="login.html">INICIAR SESSÃO</a>
+        <a href="carrinho.html" class="carrinho">🛒</a>
+      </div>
+    </div>
+
+    <!-- Faixa azul -->
+    <div class="faixa"></div>
+
+    <!-- Categorias -->
+    <nav class="categorias">
+      <a href="CategoriaCamisas.html">Camisas</a>
+      <a href="CategoriaCasacos.html">Casacos</a>
+      <a href="CategoriaGarrafas.html">Garrafas</a>
+      <a href="CategoriaOutros.html">Outros</a>
+    </nav>
+  </header>
+
+  <!-- Conteúdo específico do produto -->
+  <main class="produto-page">
+    <div class="breadcrumb">
+      <a href="index.html">Início</a> > <span>Camisa Personalizável</span>
+    </div>
+
+    <h1>Camisa Personalizável</h1>
+
+    <div class="produto-container">
+      <!-- Imagem do produto -->
+      <div class="imagem-produto">
+        <img src="images/CamisaPersonalizavelAzulPretoVerticais.png" alt="Camisa Personalizável" id="produto-imagem">
+        <div class="miniaturas">
+          <img src="images/CamisaPersonalizavelAzulPretoVerticais.png" alt="Camisa Personalizável" class="miniatura active" onclick="trocarImagem(this)">
+        </div>
+      </div>
+
+      <!-- Detalhes do produto -->
+      <div class="detalhes-produto">
+        <div class="preco-container">
+          <span class="preco">R$ 349,99</span>
+          <span class="parcelamento">ou 5x de R$ 69,99 sem juros</span>
+        </div>
+
+        <!-- Opções de personalização -->
+        <div class="personalizacao-container">
+          <!-- Cor Principal -->
+          <div class="opcao-grupo">
+            <h3>Cor Principal:</h3>
+            <div class="opcoes-personalizacao">
+              <label class="opcao-item">
+                <input type="radio" name="cor-principal" value="Azul" checked>
+                <span class="opcao-label">Azul</span>
+              </label>
+              <label class="opcao-item">
+                <input type="radio" name="cor-principal" value="Preto">
+                <span class="opcao-label">Preto</span>
+              </label>
+              <label class="opcao-item">
+                <input type="radio" name="cor-principal" value="Dourado">
+                <span class="opcao-label">Dourado</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Cor Secundária -->
+          <div class="opcao-grupo">
+            <h3>Cor Secundária:</h3>
+            <div class="opcoes-personalizacao">
+              <label class="opcao-item">
+                <input type="radio" name="cor-secundaria" value="Azul">
+                <span class="opcao-label">Azul</span>
+              </label>
+              <label class="opcao-item">
+                <input type="radio" name="cor-secundaria" value="Preto" checked>
+                <span class="opcao-label">Preto</span>
+              </label>
+              <label class="opcao-item">
+                <input type="radio" name="cor-secundaria" value="Dourado">
+                <span class="opcao-label">Dourado</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Padrão da Camisa -->
+          <div class="opcao-grupo">
+            <h3>Padrão da Camisa:</h3>
+            <div class="opcoes-personalizacao">
+              <label class="opcao-item">
+                <input type="radio" name="padrao" value="Verticais" checked>
+                <span class="opcao-label">Listras Verticais</span>
+              </label>
+              <label class="opcao-item">
+                <input type="radio" name="padrao" value="Horizontal">
+                <span class="opcao-label">Faixa Horizontal</span>
+              </label>
+              <label class="opcao-item">
+                <input type="radio" name="padrao" value="Curva">
+                <span class="opcao-label">Faixa Curva</span>
+              </label>
+            </div>
+          </div>
+
+
+        </div>
+
+        <!-- Seleção de tamanho (mantendo a funcionalidade existente) -->
+        <div class="tamanhos required">
+          <h3>Tamanho:</h3>
+          <div class="opcoes-tamanho">
+            <button class="tamanho" data-tamanho="P">P</button>
+            <button class="tamanho" data-tamanho="M">M</button>
+            <button class="tamanho" data-tamanho="G">G</button>
+            <button class="tamanho" data-tamanho="GG">GG</button>
+          </div>
+          <div class="size-warning" id="size-warning">
+            Por favor, selecione um tamanho antes de continuar.
+          </div>
+        </div>
+
+        <div class="quantidade">
+          <h3>Quantidade:</h3>
+          <div class="contador">
+            <button onclick="diminuirQuantidade()">-</button>
+            <span id="quantidade">1</span>
+            <button onclick="aumentarQuantidade()">+</button>
+          </div>
+        </div>
+
+        <div class="acoes">
+          <button class="botao-comprar" onclick="comprarProduto()">Comprar Agora</button>
+          <button class="botao-carrinho" onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="descricao">
+          <h3>Descrição:</h3>
+          <p>Camisa personalizável do Clube Atlético Mogiana. Crie sua própria combinação única escolhendo entre diferentes cores principais e secundárias, padrões de design e cores de patrocinador. Confeccionada com tecido de alta qualidade, oferece conforto e durabilidade.</p>
+          
+          <h4>Características:</h4>
+          <ul>
+            <li>Tecido: 100% Poliéster</li>
+            <li>Tecnologia Dry-Fit</li>
+            <li>Gola careca</li>
+            <li>Escudo bordado</li>
+            <li>Corte atlético</li>
+            <li>Personalização completa</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção de avaliações -->
+    <section class="avaliacoes">
+      <h2>Avaliações dos Clientes</h2>
+      <div class="avaliacoes-container">
+        <div class="avaliacao">
+          <div class="estrelas">★★★★★</div>
+          <p><strong>Carlos Silva:</strong> Adorei poder personalizar minha camisa! Ficou exatamente como eu queria.</p>
+          <span class="data">20/09/2024</span>
+        </div>
+        <div class="avaliacao">
+          <div class="estrelas">★★★★★</div>
+          <p><strong>Ana Costa:</strong> Qualidade excelente e as opções de personalização são incríveis!</p>
+          <span class="data">18/09/2024</span>
+        </div>
+        <div class="avaliacao">
+          <div class="estrelas">★★★★☆</div>
+          <p><strong>Roberto Santos:</strong> Muito boa! A combinação dourado e azul ficou perfeita.</p>
+          <span class="data">15/09/2024</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botão voltar -->
+  <a href="index.html" class="voltar-home">← Voltar à Loja</a>
+
+  <script src="js/global/cart-system.js"></script>
+  <script src="js/global/header.js"></script>
+  <script src="js/pages/PaginaCamisaPersonalizavel/PaginaCamisaPersonalizavel.js"></script>
+
+</body>
+</html>

@@ -85,3 +85,148 @@ body {
   background-color: #14233d;
   transform: translateY(-2px);
 }
+
+/* Estilos para opções de personalização no carrinho */
+.item-options {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.item-option {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 2px 0;
+  line-height: 1.3;
+}
+
+.item-size {
+  font-size: 0.9rem;
+  color: #1C3357;
+  margin: 4px 0;
+  font-weight: 500;
+}
+
+/* Melhorar layout dos itens do carrinho */
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 15px;
+  align-items: start;
+  padding: 15px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  transition: all 0.2s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-1px);
+  background-color: #eef2f9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.item-info {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.item-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.item-details h4 {
+  margin: 0 0 6px 0;
+  color: #1C3357;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.item-details p {
+  margin: 2px 0;
+  font-size: 0.9rem;
+}
+
+.item-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-btn {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #1C3357;
+  background: white;
+  color: #1C3357;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.quantity-btn:hover {
+  background: #1C3357;
+  color: white;
+}
+
+.quantity {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.remove-btn {
+  padding: 4px 8px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: #c82333;
+}
+
+.item-total {
+  font-weight: bold;
+  color: #1C3357;
+  font-size: 1rem;
+  text-align: right;
+}
+
+/* Responsividade para carrinho */
+@media (max-width: 768px) {
+  .cart-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .item-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .item-image {
+    align-self: center;
+  }
+  
+  .item-controls {
+    justify-content: center;
+  }
+  
+  .item-total {
+    text-align: center;
+  }
+}

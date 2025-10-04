@@ -180,8 +180,16 @@ class CartSystem {
 
     // Operações do Carrinho
     addItem(item) {
-        // Criar ID único baseado no produto e tamanho (se houver)
-        const uniqueId = item.size ? `${item.id}_${item.size}` : item.id;
+        // Criar ID único baseado no produto, tamanho e opções de personalização (se houver)
+        let uniqueId = item.id;
+        if (item.size) {
+            uniqueId += `_${item.size}`;
+        }
+        if (item.opcoes) {
+            // Adicionar opções de personalização ao ID único
+            uniqueId += `_${item.opcoes.corPrincipal}_${item.opcoes.corSecundaria}_${item.opcoes.padrao}`;
+        }
+        
         const existingItem = this.cart.find(cartItem => cartItem.uniqueId === uniqueId);
         
         if (existingItem) {
@@ -271,13 +279,29 @@ class CartSystem {
             this.cart.forEach(item => {
                 const cartItemElement = document.createElement('div');
                 cartItemElement.classList.add('cart-item');
+                
+                // Exibir tamanho se disponível
                 const sizeDisplay = item.size ? `<p class="item-size">Tamanho: ${item.size}</p>` : '';
+                
+                // Exibir opções de personalização se disponíveis
+                let opcoesDisplay = '';
+                if (item.opcoes) {
+                    opcoesDisplay = `
+                        <div class="item-options">
+                            <p class="item-option">Cor Principal: ${item.opcoes.corPrincipal}</p>
+                            <p class="item-option">Cor Secundária: ${item.opcoes.corSecundaria}</p>
+                            <p class="item-option">Padrão: ${item.opcoes.padrao === 'Verticais' ? 'Listras Verticais' : item.opcoes.padrao === 'Horizontal' ? 'Faixa Horizontal' : 'Faixa Curva'}</p>
+                        </div>
+                    `;
+                }
+                
                 cartItemElement.innerHTML = `
                     <div class="item-info">
                         <img src="${item.image}" alt="${item.name}" class="item-image">
                         <div class="item-details">
                             <h4>${item.name}</h4>
                             ${sizeDisplay}
+                            ${opcoesDisplay}
                             <p>R$ ${item.price.toFixed(2)}</p>
                         </div>
                     </div>
