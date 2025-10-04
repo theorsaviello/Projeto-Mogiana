@@ -187,7 +187,12 @@ class CartSystem {
         }
         if (item.opcoes) {
             // Adicionar opções de personalização ao ID único
-            uniqueId += `_${item.opcoes.corPrincipal}_${item.opcoes.corSecundaria}_${item.opcoes.padrao}`;
+            let opcoesId = `_${item.opcoes.corPrincipal}`;
+            if (item.opcoes.corSecundaria) {
+                opcoesId += `_${item.opcoes.corSecundaria}`;
+            }
+            opcoesId += `_${item.opcoes.padrao}`;
+            uniqueId += opcoesId;
         }
         
         const existingItem = this.cart.find(cartItem => cartItem.uniqueId === uniqueId);
@@ -286,13 +291,16 @@ class CartSystem {
                 // Exibir opções de personalização se disponíveis
                 let opcoesDisplay = '';
                 if (item.opcoes) {
-                    opcoesDisplay = `
-                        <div class="item-options">
-                            <p class="item-option">Cor Principal: ${item.opcoes.corPrincipal}</p>
-                            <p class="item-option">Cor Secundária: ${item.opcoes.corSecundaria}</p>
-                            <p class="item-option">Padrão: ${item.opcoes.padrao === 'Verticais' ? 'Listras Verticais' : item.opcoes.padrao === 'Horizontal' ? 'Faixa Horizontal' : 'Faixa Curva'}</p>
-                        </div>
-                    `;
+                    let opcoesList = `<p class="item-option">Cor Principal: ${item.opcoes.corPrincipal}</p>`;
+                    
+                    // Só exibir cor secundária se existir (para listras verticais)
+                    if (item.opcoes.corSecundaria) {
+                        opcoesList += `<p class="item-option">Cor Secundária: ${item.opcoes.corSecundaria}</p>`;
+                    }
+                    
+                    opcoesList += `<p class="item-option">Padrão: ${item.opcoes.padrao === 'Verticais' ? 'Listras Verticais' : item.opcoes.padrao === 'Horizontal' ? 'Faixa Horizontal' : 'Faixa Curva'}</p>`;
+                    
+                    opcoesDisplay = `<div class="item-options">${opcoesList}</div>`;
                 }
                 
                 cartItemElement.innerHTML = `

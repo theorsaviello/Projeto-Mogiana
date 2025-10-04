@@ -19,6 +19,29 @@ let personalizacaoAtual = {
   padrao: 'Verticais'
 };
 
+// Função para controlar visibilidade da cor secundária
+function controlarVisibilidadeCorSecundaria() {
+  const grupoCorSecundaria = document.getElementById('grupo-cor-secundaria');
+  if (grupoCorSecundaria) {
+    if (personalizacaoAtual.padrao === 'Verticais') {
+      grupoCorSecundaria.style.display = 'block';
+      // Se cor secundária está null, definir para o valor padrão
+      if (!personalizacaoAtual.corSecundaria) {
+        personalizacaoAtual.corSecundaria = 'Preto';
+        // Marcar o radio button correspondente
+        const radioPreto = document.querySelector('input[name="cor-secundaria"][value="Preto"]');
+        if (radioPreto) {
+          radioPreto.checked = true;
+        }
+      }
+    } else {
+      grupoCorSecundaria.style.display = 'none';
+      // Resetar cor secundária para um valor padrão quando oculta
+      personalizacaoAtual.corSecundaria = null;
+    }
+  }
+}
+
 // Dados do produto
 const produtoAtual = {
   id: 'camisa-personalizavel',
@@ -50,8 +73,14 @@ function inicializarPagina() {
   // Configurar seleção de tamanhos
   configurarSelecaoTamanhos();
   
-  // Configurar opções de personalização
+  // Configurar personalização
   configurarPersonalizacao();
+  
+  // Controlar visibilidade inicial da cor secundária
+  controlarVisibilidadeCorSecundaria();
+  
+  // Atualizar imagem inicial
+  atualizarImagemProduto();
   
   // Desabilitar botões inicialmente
   desabilitarBotoes();
@@ -103,9 +132,12 @@ function configurarGrupoPersonalizacao(nomeGrupo, propriedade) {
       if (this.checked) {
         personalizacaoAtual[propriedade] = this.value;
         console.log(`${propriedade} alterado para:`, this.value);
-        console.log('Personalização atual:', personalizacaoAtual);
         
-        // Atualizar imagem do produto
+        // Se mudou o padrão, controlar visibilidade da cor secundária
+        if (propriedade === 'padrao') {
+          controlarVisibilidadeCorSecundaria();
+        }
+        
         atualizarImagemProduto();
       }
     });
@@ -127,7 +159,13 @@ function atualizarImagemProduto() {
     
     setTimeout(() => {
       imagemPrincipal.src = caminhoImagem;
-      imagemPrincipal.alt = `Camisa Personalizável - ${personalizacaoAtual.corPrincipal} ${personalizacaoAtual.corSecundaria} ${personalizacaoAtual.padrao}`;
+      // Construir alt text baseado nas opções disponíveis
+      let altText = `Camisa Personalizável - ${personalizacaoAtual.corPrincipal}`;
+      if (personalizacaoAtual.padrao === 'Verticais' && personalizacaoAtual.corSecundaria) {
+        altText += ` ${personalizacaoAtual.corSecundaria}`;
+      }
+      altText += ` ${personalizacaoAtual.padrao}`;
+      imagemPrincipal.alt = altText;
       imagemPrincipal.style.opacity = '1';
       
       // Atualizar miniatura também
@@ -144,10 +182,18 @@ function atualizarImagemProduto() {
 function gerarNomeArquivo() {
   // Normalizar os valores removendo espaços e acentos
   const corPrincipal = normalizacaoValores[personalizacaoAtual.corPrincipal] || personalizacaoAtual.corPrincipal;
-  const corSecundaria = normalizacaoValores[personalizacaoAtual.corSecundaria] || personalizacaoAtual.corSecundaria;
   const padrao = normalizacaoValores[personalizacaoAtual.padrao] || personalizacaoAtual.padrao;
   
-  const nomeArquivo = `CamisaPersonalizavel${corPrincipal}${corSecundaria}${padrao}.png`;
+  let nomeArquivo;
+  
+  // Se o padrão for 'Verticais', incluir cor secundária
+  if (personalizacaoAtual.padrao === 'Verticais' && personalizacaoAtual.corSecundaria) {
+    const corSecundaria = normalizacaoValores[personalizacaoAtual.corSecundaria] || personalizacaoAtual.corSecundaria;
+    nomeArquivo = `CamisaPersonalizavel${corPrincipal}${corSecundaria}${padrao}.png`;
+  } else {
+    // Para outros padrões, usar apenas cor principal e padrão
+    nomeArquivo = `CamisaPersonalizavel${corPrincipal}${padrao}.png`;
+  }
   
   console.log('Nome do arquivo gerado:', nomeArquivo);
   return nomeArquivo;
@@ -223,7 +269,7 @@ function adicionarAoCarrinho() {
     // Adicionar opções de personalização ao objeto
     opcoes: {
       corPrincipal: personalizacaoAtual.corPrincipal,
-      corSecundaria: personalizacaoAtual.corSecundaria,
+      corSecundaria: personalizacaoAtual.padrao === 'Verticais' ? personalizacaoAtual.corSecundaria : null,
       padrao: personalizacaoAtual.padrao
     }
   };
@@ -265,7 +311,7 @@ function comprarProduto() {
     quantity: quantidadeAtual,
     opcoes: {
       corPrincipal: personalizacaoAtual.corPrincipal,
-      corSecundaria: personalizacaoAtual.corSecundaria,
+      corSecundaria: personalizacaoAtual.padrao === 'Verticais' ? personalizacaoAtual.corSecundaria : null,
       padrao: personalizacaoAtual.padrao
     }
   };
