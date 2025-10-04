@@ -3,6 +3,7 @@ const produtos = [
   { nome: "Camisa Oficial 1", link: "PaginaCamisa1.html" },
   { nome: "Camisa Oficial 2", link: "PaginaCamisa2.html" },
   { nome: "Camisa Oficial 3", link: "PaginaCamisa3.html" },
+  { nome: "Camisa Personalizável", link: "PaginaCamisaPersonalizavel.html" },
   { nome: "Jaqueta Oficial", link: "PaginaJaqueta.html" },
   { nome: "Garrafinha Térmica Oficial", link: "PaginaGarrafinha.html" },
   { nome: "Boné Oficial", link: "PaginaBoné.html" }
