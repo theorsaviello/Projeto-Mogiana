@@ -130,13 +130,19 @@ ul#suggestions li:hover {
   border-top: 3px solid #1C3357;
 }
 
-.categorias span {
+.categorias a {
+  text-decoration: none;
+  color: #222; /* Cor padrão do texto, mantendo a paleta */
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.2s, transform 0.2s;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-.categorias span:hover {
-  color: #1C3357;
+.categorias a:hover {
+  color: #1C3357; /* Cor azul escuro ao passar o mouse */
+  transform: translateY(-2px);
+  background-color: rgba(28, 51, 87, 0.1); /* Um leve fundo para destacar */
 }
 
 /* Efeito shrink no scroll */
