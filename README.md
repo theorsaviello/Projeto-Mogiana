@@ -47,13 +47,13 @@ O objetivo é praticar conceitos de desenvolvimento web criando uma plataforma c
 
 ## 📌 Próximos Passos
 
-- [ ] Finalizar a **página inicial** (layout responsivo, banners e destaques de produtos)  
-- [ ] Criar a **página de login e cadastro** com validação de formulários  
-- [ ] Implementar a **página do carrinho de compras**  
+- [X] Finalizar a **página inicial** (layout responsivo, banners e destaques de produtos)  
+- [X] Criar a **página de login e cadastro** com validação de formulários  
+- [X] Implementar a **página do carrinho de compras**  
 - [ ] Desenvolver a **página de pedidos** para exibir histórico e status  
-- [ ] Criar páginas individuais para cada **produto**  
-- [ ] Adicionar sistema de **busca de produtos**  
-- [ ] Implementar **filtros e categorias** na listagem de produtos  
+- [X] Criar páginas individuais para cada **produto**  
+- [X] Adicionar sistema de **busca de produtos**  
+- [X] Implementar **filtros e categorias** na listagem de produtos  
 - [ ] Criar a área de **perfil do usuário** (dados pessoais e preferências)  
 
 ---
