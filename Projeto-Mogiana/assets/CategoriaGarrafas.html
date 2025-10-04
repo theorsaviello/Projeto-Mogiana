@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garrafas - Loja Clube Atlético Mogiana</title>
+  <link rel="stylesheet" href="css/pages/CategoriaGarrafas/CategoriaGarrafas.css">
+  <link rel="stylesheet" href="css/global/cart-system.css">
+</head>
+<body>
+
+  <header>
+    <div class="topo">
+      <!-- Barra de pesquisa -->
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Pesquisar produto..." autocomplete="off"/>
+        <ul id="suggestions"></ul>
+      </div>
+
+      <!-- Logo -->
+      <a href="index.html"><img src="images/LogoLoja.png" alt="Logo da Loja" class="logo"></a>
+
+      <!-- Links de login/cadastro/carrinho -->
+      <div class="auth-links">
+        <a href="cadastro.html">CADASTRE-SE</a> | 
+        <a href="login.html">INICIAR SESSÃO</a>
+        <a href="carrinho.html" class="carrinho">🛒</a>
+      </div>
+    </div>
+
+    <!-- Faixa azul -->
+    <div class="faixa"></div>
+
+    <!-- Categorias -->
+    <nav class="categorias">
+      <span>Camisas</span>
+      <span>Casacos</span>
+      <span>Garrafas</span>
+      <span>Outros</span>
+    </nav>
+  </header>
+
+  <!-- Produtos -->
+  <section class="produtos">
+    
+    <div class="produto" onclick="window.location.href='PaginaGarrafinha.html'">
+      <img src="images/GarrafaOficial.png" alt="Garrafinha">
+      <h3>Garrafinha Térmica Oficial</h3>
+      <p><span class="preco-antigo">R$ 99,99</span> <span class="preco">R$ 79,99</span></p>
+      <button class="botao" onclick="event.stopPropagation(); window.location.href='PaginaGarrafinha.html'">Comprar</button>
+    </div>
+
+  </section>
+  <script src="js/global/header.js"></script>
+  <script src="js/global/cart-system.js"></script>
+  <script src="js/pages/CategoriaGarrafas/CategoriaGarrafas.js"></script>
+
+</body>
+</html>
