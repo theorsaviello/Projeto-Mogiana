@@ -1,4 +1,3 @@
-/* carrinho.css */
 
 body {
   font-family: Arial, sans-serif;
@@ -6,17 +5,8 @@ body {
   padding: 0;
   background-color: #f7f9fc;
   color: #333;
-}
-
-header {
-  background-color: #1C3357;
-  padding: 15px;
-  text-align: center;
-}
-
-header .logo img {
-  max-width: 180px;
-  height: auto;
+  padding-top: 250px; /* espaço para o header fixo */
+  transition: padding-top 0.3s ease;
 }
 
 /* Conteúdo do carrinho */

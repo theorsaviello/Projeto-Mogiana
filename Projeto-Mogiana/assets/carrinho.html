@@ -6,12 +6,40 @@
   <title>Carrinho - Loja Clube Atlético Mogiana</title>
   <link rel="stylesheet" href="css/pages/carrinho/carrinho.css">
   <link rel="stylesheet" href="css/global/cart-system.css">
+  <link rel="stylesheet" href="css/global/header.css">
+  <link rel="stylesheet" href="css/global/global.css">
 </head>
 <body>
+
   <header>
-    <div class="logo">
-      <img src="images/logobranca.png" alt="Logo Clube Atlético Mogiana">
+    <div class="topo">
+      <!-- Barra de pesquisa -->
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Pesquisar produto..." autocomplete="off"/>
+        <ul id="suggestions"></ul>
+      </div>
+
+      <!-- Logo -->
+      <img src="images/LogoLoja.png" alt="Logo da Loja" class="logo">
+
+      <!-- Links de login/cadastro/carrinho -->
+      <div class="auth-links">
+        <a href="cadastro.html">CADASTRE-SE</a> | 
+        <a href="login.html">INICIAR SESSÃO</a>
+        <a href="carrinho.html" class="carrinho">🛒</a>
+      </div>
     </div>
+
+    <!-- Faixa azul -->
+    <div class="faixa"></div>
+
+    <!-- Categorias -->
+    <nav class="categorias">
+      <span>Camisas</span>
+      <span>Casacos</span>
+      <span>Garrafas</span>
+      <span>Bonés</span>
+    </nav>
   </header>
 
   <main class="container">
@@ -24,5 +52,7 @@
   </main>
 
   <script src="js/global/cart-system.js"></script>
+  <script src="js/global/global.js"></script>
+  <script src="js/global/header.js"></script>
 </body>
 </html>

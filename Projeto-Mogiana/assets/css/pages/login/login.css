@@ -3,22 +3,8 @@ body {
   background: #f8f8f8;
   margin: 0;
   padding: 0;
-}
-
-header {
-  background: #1C3357;
-  color: white;
-  padding: 15px;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-header span {
-  font-weight: bold;
+  padding-top: 250px; /* espaço para o header fixo */
+  transition: padding-top 0.3s ease;
 }
 
 .container {
