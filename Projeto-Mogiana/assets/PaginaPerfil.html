@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Perfil - Clube Atlético Mogiana</title>
+  <link rel="stylesheet" href="css/pages/PaginaPerfil/PaginaPerfil.css">
+  <link rel="stylesheet" href="css/global/cart-system.css">
+  <link rel="stylesheet" href="css/global/header.css">
+</head>
+<body>
+
+  <header>
+    <div class="topo">
+      <!-- Barra de pesquisa -->
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Pesquisar produto..." autocomplete="off"/>
+        <ul id="suggestions"></ul>
+      </div>
+
+      <!-- Logo -->
+      <a href="index.html"><img src="images/LogoLoja.png" alt="Logo da Loja" class="logo"></a>
+
+      <!-- Links de login/cadastro/carrinho -->
+      <div class="auth-links">
+        <a href="cadastro.html">CADASTRE-SE</a> | 
+        <a href="login.html">INICIAR SESSÃO</a>
+        <a href="carrinho.html" class="carrinho">🛒</a>
+      </div>
+    </div>
+
+    <!-- Faixa azul -->
+    <div class="faixa"></div>
+
+    <!-- Categorias -->
+    <nav class="categorias">
+      <a href="CategoriaCamisas.html">Camisas</a>
+      <a href="CategoriaCasacos.html">Casacos</a>
+      <a href="CategoriaGarrafas.html">Garrafas</a>
+      <a href="CategoriaOutros.html">Outros</a>
+    </nav>
+  </header>
+
+  <!-- Conteúdo da página de perfil -->
+  <section class="perfil-container">
+    <div class="perfil-card">
+      <h1>Meu Perfil</h1>
+      
+      <div class="perfil-info" id="perfil-info-view">
+        <div class="info-item">
+          <label>Nome Completo:</label>
+          <p id="user-nome">-</p>
+        </div>
+        
+        <div class="info-item">
+          <label>E-mail:</label>
+          <p id="user-email">-</p>
+        </div>
+        
+        <div class="info-item">
+          <label>Endereço:</label>
+          <p id="user-endereco">Não informado</p>
+        </div>
+        
+        <div class="info-item">
+          <label>Telefone:</label>
+          <p id="user-telefone">Não informado</p>
+        </div>
+        
+        <div class="info-item">
+          <label>Data de Cadastro:</label>
+          <p id="user-data-cadastro">-</p>
+        </div>
+      </div>
+      
+      <form class="perfil-form" id="perfil-form-edit" style="display: none;">
+        <div class="form-group">
+          <label for="edit-nome">Nome Completo:</label>
+          <input type="text" id="edit-nome" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="edit-email">E-mail:</label>
+          <input type="email" id="edit-email" disabled>
+        </div>
+        
+        <div class="form-group">
+          <label for="edit-endereco">Endereço:</label>
+          <input type="text" id="edit-endereco" placeholder="Rua, número, bairro, cidade, estado">
+        </div>
+        
+        <div class="form-group">
+          <label for="edit-telefone">Telefone:</label>
+          <input type="tel" id="edit-telefone" placeholder="(00) 00000-0000">
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" class="botao-salvar">Salvar Alterações</button>
+          <button type="button" class="botao-cancelar" onclick="cancelarEdicao()">Cancelar</button>
+        </div>
+      </form>
+      
+      <div class="perfil-actions">
+        <button class="botao-editar" id="botao-editar" onclick="habilitarEdicao()">
+          Editar Informações
+        </button>
+        <button class="botao-pedidos" onclick="window.location.href='pedidos.html'">
+          Ver Meus Pedidos
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/global/cart-system.js"></script>
+  <script src="js/pages/PaginaPerfil/PaginaPerfil.js"></script>
+
+</body>
+</html>

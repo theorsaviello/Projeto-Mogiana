@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Pedidos - Clube Atlético Mogiana</title>
+  <link rel="stylesheet" href="css/pages/pedidos/pedidos.css">
+  <link rel="stylesheet" href="css/global/cart-system.css">
+  <link rel="stylesheet" href="css/global/header.css">
+</head>
+<body>
+
+  <header>
+    <div class="topo">
+      <!-- Barra de pesquisa -->
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Pesquisar produto..." autocomplete="off"/>
+        <ul id="suggestions"></ul>
+      </div>
+
+      <!-- Logo -->
+      <a href="index.html"><img src="images/LogoLoja.png" alt="Logo da Loja" class="logo"></a>
+
+      <!-- Links de login/cadastro/carrinho -->
+      <div class="auth-links">
+        <a href="cadastro.html">CADASTRE-SE</a> | 
+        <a href="login.html">INICIAR SESSÃO</a>
+        <a href="carrinho.html" class="carrinho">🛒</a>
+      </div>
+    </div>
+
+    <!-- Faixa azul -->
+    <div class="faixa"></div>
+
+    <!-- Categorias -->
+    <nav class="categorias">
+      <a href="CategoriaCamisas.html">Camisas</a>
+      <a href="CategoriaCasacos.html">Casacos</a>
+      <a href="CategoriaGarrafas.html">Garrafas</a>
+      <a href="CategoriaOutros.html">Outros</a>
+    </nav>
+  </header>
+
+  <!-- Conteúdo da página de pedidos -->
+  <section class="pedidos-container">
+    <h1>Meus Pedidos</h1>
+    
+    <div id="pedidos-lista" class="pedidos-lista">
+      <!-- Os pedidos serão carregados dinamicamente aqui -->
+    </div>
+    
+    <div id="sem-pedidos" class="sem-pedidos" style="display: none;">
+      <p>Você ainda não realizou nenhum pedido.</p>
+      <button class="botao" onclick="window.location.href='index.html'">
+        Ir para a Loja
+      </button>
+    </div>
+  </section>
+
+  <script src="js/global/cart-system.js"></script>
+  <script src="js/pages/pedidos/pedidos.js"></script>
+
+</body>
+</html>

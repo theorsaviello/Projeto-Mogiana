@@ -340,7 +340,7 @@ class CartSystem {
 
         if (this.currentUser) {
             authLinks.innerHTML = `
-                <span>Olá, ${this.currentUser.nome}!</span> | 
+                <a href="PaginaPerfil.html" style="color: #1C3357; font-weight: bold;">Olá, ${this.currentUser.nome}!</a> | 
                 <a href="#" onclick="cartSystem.logout(); return false;">SAIR</a>
                 <a href="carrinho.html" class="carrinho">🛒</a>
             `;
