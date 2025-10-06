@@ -68,8 +68,8 @@ O projeto é organizado de forma modular, separando arquivos HTML, CSS e JavaScr
 - [X] Adicionar sistema de **busca de produtos** com autocompletar.
 - [X] Implementar **páginas de categorias** para filtrar produtos.
 - [X] Desenvolver a funcionalidade de **personalização de camisa** com atualização de imagem em tempo real.
-- [ ] Desenvolver a **página de pedidos** para exibir o histórico de compras do usuário.
-- [ ] Criar a área de **perfil do usuário** para gerenciar dados pessoais.
+- [X] Desenvolver a **página de pedidos** para exibir o histórico de compras do usuário.
+- [X] Criar a área de **perfil do usuário** para gerenciar dados pessoais.
 - [ ] Integrar com uma **API de pagamentos** para finalizar as compras.
 - [ ] Migrar o armazenamento de dados para um **banco de dados** com um back-end dedicado.
 
