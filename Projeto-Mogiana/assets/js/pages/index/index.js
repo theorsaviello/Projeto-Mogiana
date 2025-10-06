@@ -6,7 +6,8 @@ const produtos = [
   { nome: "Camisa Personalizável", link: "PaginaCamisaPersonalizavel.html" },
   { nome: "Jaqueta Oficial", link: "PaginaJaqueta.html" },
   { nome: "Garrafinha Térmica Oficial", link: "PaginaGarrafinha.html" },
-  { nome: "Boné Oficial", link: "PaginaBoné.html" }
+  { nome: "Boné Oficial", link: "PaginaBoné.html" },
+  { nome: "Moletom Oficial", link: "PaginaMoletom.html" }
 ];
 
 const searchInput = document.getElementById("search");

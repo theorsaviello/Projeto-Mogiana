@@ -4,10 +4,10 @@ let quantidadeAtual = 1;
 
 // Dados do produto
 const produtoAtual = {
-  id: 'jaqueta-oficial',
-  name: 'Jaqueta Oficial',
-  price: 429.99,
-  image: 'images/Jaqueta Oficial.png'
+  id: 'moletom-oficial',
+  name: 'Moletom Oficial',
+  price: 249.99,
+  image: 'images/MoletomOficial.png'
 };
 
 // Inicializar página
