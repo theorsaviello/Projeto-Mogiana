@@ -180,3 +180,143 @@ body.shrink-padding {
   background: #2a4a6b;
   transform: translateY(-2px);
 }
+
+/* Media Queries para Responsividade */
+
+/* Telas menores que 768px (celulares) */
+@media (max-width: 768px) {
+  body {
+    padding-top: 200px; /* Ajusta o padding para o header menor em mobile */
+  }
+
+  header {
+    border-bottom: 3px solid #1C3357;
+  }
+
+  .topo {
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    padding: 10px 20px; /* Reduz o padding */
+    align-items: center; /* Centraliza os itens */
+  }
+
+  .logo {
+    width: 180px; /* Reduz o tamanho do logo */
+    margin: 10px auto; /* Centraliza o logo */
+    position: static; /* Remove posicionamento absoluto */
+    transform: none;
+  }
+
+  .search-container {
+    position: static; /* Remove posicionamento absoluto */
+    transform: none;
+    width: 100%; /* Ocupa a largura total */
+    order: 3; /* Move para baixo */
+    margin-top: 10px;
+  }
+
+  input[type="text"] {
+    width: calc(100% - 20px); /* Ajusta a largura do input */
+    margin: 0 auto;
+    display: block;
+  }
+
+  ul#suggestions {
+    width: calc(100% - 20px);
+    left: 10px;
+    right: 10px;
+  }
+
+  .auth-links {
+    position: static; /* Remove posicionamento absoluto */
+    transform: none;
+    margin-top: 10px; /* Adiciona margem superior */
+    order: 2; /* Posiciona abaixo do logo */
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .auth-links a {
+    margin: 0 3px;
+  }
+
+  .auth-links .carrinho {
+    font-size: 16px;
+    margin-left: 5px;
+  }
+
+  .faixa {
+    height: 1px;
+  }
+
+  .categorias {
+    flex-direction: column; /* Empilha as categorias verticalmente */
+    gap: 10px; /* Reduz o espaçamento */
+    padding: 10px;
+    border-top: 1px solid #1C3357;
+  }
+
+  .categorias a {
+    padding: 8px 15px;
+    text-align: center;
+  }
+
+  header.shrink .logo {
+    width: 120px;
+  }
+
+  header.shrink .topo {
+    padding: 5px 10px;
+  }
+
+  body.shrink-padding {
+    padding-top: 150px;
+  }
+}
+
+/* Telas entre 768px e 1024px (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding-top: 220px; /* Ajusta o padding para o header em tablet */
+  }
+
+  .topo {
+    padding: 15px 30px;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  .search-container {
+    left: 15px;
+    max-width: 300px;
+  }
+
+  .auth-links {
+    right: 20px;
+    font-size: 13px;
+  }
+
+  .auth-links .carrinho {
+    font-size: 17px;
+  }
+
+  .categorias {
+    gap: 30px;
+    padding: 12px;
+  }
+
+  header.shrink .logo {
+    width: 130px;
+  }
+
+  header.shrink .topo {
+    padding: 8px 15px;
+  }
+
+  body.shrink-padding {
+    padding-top: 180px;
+  }
+}
+
